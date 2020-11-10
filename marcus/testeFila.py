@@ -1,3 +1,6 @@
+#
+# ÁREA DESTINADA A IMPLEMENTAÇÃO
+#
 from fila import *
 
 def main():

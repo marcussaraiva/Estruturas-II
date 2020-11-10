@@ -1,3 +1,6 @@
+#
+#   AREA DE MENU PARA SER IMPLEMENTADA POSTERIORMENTE
+#
 def leia_resposta(resposta_usuario):
     while True:
         try:

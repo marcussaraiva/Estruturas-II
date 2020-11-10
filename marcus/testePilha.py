@@ -1,5 +1,7 @@
+#
+# ÁREA DESTINADA A IMPLEMENTAÇÃO
+#
 from pilha import *
-from time import sleep
 
 def main():
     pilha = Pilha(10)

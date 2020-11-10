@@ -1,3 +1,6 @@
+#
+#   AREA DE MENU PARA SER IMPLEMENTADA POSTERIORMENTE
+#
 from interface import menu,cabecalho
 from time import sleep
 
