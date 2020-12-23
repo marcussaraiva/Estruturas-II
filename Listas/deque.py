@@ -22,7 +22,7 @@ class Deque:
                 del self.deque[0]
                 return elemento_removido
             return False
-
+ 
         def remover_final(self):
             if(len(self.deque) > 0):
                 return self.deque.pop()
