@@ -9,6 +9,16 @@ class Deque:
         def get_tamanho(self):
             return print(len(self.deque))
 
+#----------ORDENAR----------#
+        def ordenar(self):
+            for passagem in range(len(self.deque) - 1, 0, -1):     
+                for i in range(passagem):
+                    if(self.deque[i] > self.deque[i+1]):
+                        troca = self.deque[i]
+                        self.deque[i] = self.deque[i+1]
+                        self.deque[i+1] = troca
+                
+
         def inserir_inicio(self,elemento):
             if(self.tamanho == len(self.deque)):
                 print("Deque cheio")
