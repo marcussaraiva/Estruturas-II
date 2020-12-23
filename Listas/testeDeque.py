@@ -14,6 +14,7 @@ def main():
     deque.remover_final()
     deque.remover_por_indice(0)
     deque.mostrar()
+    deque.get_tamanho()
 
 if __name__ == "__main__":
     main()

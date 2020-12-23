@@ -6,6 +6,9 @@ class Deque:
             self.fim = None
             self.deque = []
         
+        def get_tamanho(self):
+            return print(len(self.deque))
+
         def inserir_inicio(self,elemento):
             if(self.tamanho == len(self.deque)):
                 print("Deque cheio")
