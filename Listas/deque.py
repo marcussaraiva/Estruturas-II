@@ -27,6 +27,15 @@ class Deque:
             if(len(self.deque) > 0):
                 return self.deque.pop()
             return False
+#
+#                  REMOÇÃO POR ÍNDICE
+#
+        def remover_por_indice(self, indice):
+            if(len(self.deque) > 0):
+                elemento_removido = self.deque[indice]
+                del self.deque[indice]
+                return elemento_removido
+            return False
 
         def mostrar(self):
             if(len(self.deque) > 0):
