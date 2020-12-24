@@ -23,7 +23,8 @@ def main():
 #    deque.remover_inicio()
 #    deque.remover_final()
 #    deque.remover_por_indice(0)
-    deque.ordenar()
+#    deque.ordenar()
+    deque.quickSort()
     deque.mostrar()
     deque.get_tamanho()
 

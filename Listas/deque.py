@@ -1,3 +1,5 @@
+from quickSort import *
+
 class Deque:
 
         def __init__(self, tamanho):
@@ -9,6 +11,11 @@ class Deque:
         def get_tamanho(self):
             return print(len(self.deque))
 
+#----------QUICKSORT----------#
+        def quickSort(self):
+            quickSort = QuickSort()
+            quickSort.quicksort(self.deque)
+            
 #----------ORDENAR----------#
         def ordenar(self):
             for passagem in range(len(self.deque) - 1, 0, -1):     
