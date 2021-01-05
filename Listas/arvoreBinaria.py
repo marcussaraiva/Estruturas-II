@@ -56,6 +56,3 @@ class ArvoreBinaria:
         if total_de_nos == total_de_folhas:
             return print("Árvore cheia!")
         return print("Árvore não cheia!")
-        
-       
-
