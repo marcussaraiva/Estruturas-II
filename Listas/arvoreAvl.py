@@ -49,3 +49,43 @@ class ArvoreAVL(object):
         x.altura = 1 + max(self.getAltura(x.esquerda), self.getAltura(x.direita))
         y.altura = 1 + max(self.getAltura(y.esquerda), self.getAltura(y.direita))
         return y
+
+    def remover(self, raiz, chave):
+        if not raiz:
+            return raiz
+        elif chave < raiz.valor:
+            raiz.esquerda = self.remover(raiz.esquerda, chave)
+        elif chave > raiz.valor:
+            raiz.direita = self.remover(raiz.direita, chave)
+        else:
+            if raiz.esquerda is None:
+                temp = raiz.direita
+                raiz = None
+                return temp
+            elif raiz.direita is None:
+                temp = raiz.esquerda
+                raiz = None
+                return temp
+            temp = self.getNodeComMenorValor(raiz.direita)
+            raiz.valor = temp.valor
+            raiz.direita = self.remover(raiz.direita, temp.valor)
+        if raiz is None:
+            return raiz
+        raiz.altura = 1 + max(self.getAltura(raiz.esquerda), self.getAltura(raiz.direita))
+        balanco = self.getBalanceamento(raiz)
+        if balanco > 1 and self.getBalanceamento(raiz.esquerda) >= 0:
+            return self.rotacao_direita(raiz)
+        if balanco < -1 and self.getBalanceamento(raiz.direita) <= 0:
+            return self.rotacao_esquerda(raiz)
+        if balanco > 1 and self.getBalanceamento(raiz.esquerda) < 0:
+            raiz.esquerda = self.rotacao_esquerda(raiz.esquerda)
+            return self.rotacao_direita(raiz)
+        if balanco < -1 and self.getBalanceamento(raiz.direita) > 0:
+            raiz.direita = self.rotacao_direita(raiz.direita)
+            return self.rotacao_esquerda(raiz)
+        return raiz
+    
+    def getNodeComMenorValor(self, raiz):
+        if raiz is None or raiz.esquerda is None:
+            return raiz
+        return self.getNodeComMenorValor(raiz.esquerda)
