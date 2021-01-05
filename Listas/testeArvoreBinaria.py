@@ -22,14 +22,18 @@ def main():
     node1.direita = node4
     node2.esquerda = node5
     node2.direita = node6
-    node5.esquerda = node7
-    node5.direita = node8
-    node7.esquerda = node9
-    node8.direita = node10
+    # node5.esquerda = node7
+    # node5.direita = node8
+    # node7.esquerda = node9
+    # node8.direita = node10
 # Instanciando Arvore #
     arvore_binaria = ArvoreBinaria(raiz)
 
-    arvore_binaria.mostrar_largura(raiz)
+    # print(arvore_binaria.tamanho())
+    # arvore_binaria.mostrar_largura(raiz)
+    # print(arvore_binaria.contar_folhas())
+    arvore_binaria.arvore_cheia()
+
 
 if __name__ == "__main__":
     main()
