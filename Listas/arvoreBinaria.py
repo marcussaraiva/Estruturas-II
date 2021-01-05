@@ -1,5 +1,5 @@
 from nodeArvoreBinaria import *
-from fila import *
+from pilha import *
 
 
 class ArvoreBinaria:
@@ -56,3 +56,16 @@ class ArvoreBinaria:
         if total_de_nos == total_de_folhas:
             return print("Árvore cheia!")
         return print("Árvore não cheia!")
+    
+    def espelhar(self, node=None):
+        if node is None:
+            node = self.raiz
+        fila = []
+        fila.append(node)
+        while len(fila):
+            node = fila.pop()
+            if node:
+                node.esquerda, node.direita = node.direita, node.esquerda
+                fila.append(node.esquerda)
+                fila.append(node.direita)
+        return self.raiz

@@ -1,6 +1,6 @@
 class Fila:
 
-    def __init__(self, tamanho):
+    def __init__(self, tamanho=0):
         self.tamanho = tamanho
         self.fila = []
 

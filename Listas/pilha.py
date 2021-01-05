@@ -1,6 +1,6 @@
 class Pilha:
     
-    def __init__(self, tamanho):
+    def __init__(self, tamanho=0):
         self.tamanho = tamanho
         self.topo = -1
         self.elementos = []
