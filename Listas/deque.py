@@ -1,4 +1,5 @@
 from quickSort import *
+from mergeSort import *
 
 class Deque:
 
@@ -24,7 +25,30 @@ class Deque:
                         troca = self.deque[i]
                         self.deque[i] = self.deque[i+1]
                         self.deque[i+1] = troca
-                
+
+#----------SELECTION-SORT----------#
+        def selectionSort(self):
+            for j in range(len(self.deque) - 1):
+                indice_minimo = j
+                for i in range (j, len(self.deque)):
+                    if self.deque[i] < self.deque[indice_minimo]:
+                        indice_minimo = i
+                if self.deque[j] > self.deque[indice_minimo]:
+                    auxiliar = self.deque[j]
+                    self.deque[j] = self.deque[indice_minimo]
+                    self.deque[indice_minimo] = auxiliar
+
+#----------BUBBLE-SORT----------#
+        def bubbleSort(self):
+            for j in range(len(self.deque) -1 ):
+                for i in range(len(self.deque) -1 ):
+                    if self.deque[i] > self.deque[i+1]:
+                        self.deque[i], self.deque[i+1] = self.deque[i+1], self.deque[i]
+
+#----------MERGE-SORT----------#
+        def mergeSort(self):        
+            mergeSort = MergeSort()
+            mergeSort.mergeSort(self.deque)
 
         def inserir_inicio(self,elemento):
             if(self.tamanho == len(self.deque)):
